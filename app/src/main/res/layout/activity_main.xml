@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="weather"
+            type="com.example.task4.model.WeatherResponse" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/padding"
+        android:layout_height="wrap_content"
+        tools:context=".ui.PostsActivity">
+        <!--- <androidx.recyclerview.widget.RecyclerView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id="@+id/recycler_view"/>-->
+        <TextView
+            android:text="@{weather.name+`, `+weather.sys.country}"
+            style="@style/CustomStyle"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:id="@+id/txt_country"/>
+        <TextView
+            style="@style/CustomStyle"
+            android:text="@{`Temperature : `+String.valueOf(weather.main.temp)}"
+            android:id="@+id/txt_temp"/>
+        <TextView
+            style="@style/CustomStyle"
+            android:text="@{`Pressure : `+String.valueOf(weather.main.pressure)}"
+            android:id="@+id/txt_pressure"/>
+        <TextView
+            style="@style/CustomStyle"
+            android:text="@{`Latitude : `+String.valueOf(weather.coord.lat)}"
+            android:id="@+id/txt_lat"/>
+        <TextView
+            style="@style/CustomStyle"
+            android:text="@{`Longitude : `+String.valueOf(weather.coord.lon)}"
+            android:id="@+id/txt_lon"/>
+
+    </LinearLayout>
+</layout>
